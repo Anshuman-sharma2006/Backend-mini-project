@@ -1,0 +1,154 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e5e5e5;
+}
+
+/* Main container */
+.Crate-post-Seaction {
+  background: linear-gradient(145deg, #2e2e2e, #1e1e1e);
+  border-radius: 12px;
+  padding: 30px 35px;
+  width: 360px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Heading */
+.Crate-post-Seaction h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #f1f1f1;
+}
+
+/* Form layout */
+.Crate-post-Seaction form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Inputs */
+.Crate-post-Seaction input[type="file"],
+.Crate-post-Seaction input[type="text"] {
+  background: #1b1b1b;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 10px;
+  color: #dcdcdc;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* File input tweak */
+.Crate-post-Seaction input[type="file"] {
+  padding: 6px;
+}
+
+/* Focus effect */
+.Crate-post-Seaction input:focus {
+  outline: none;
+  border-color: #6f8cff;
+  box-shadow: 0 0 0 1px rgba(111, 140, 255, 0.4);
+}
+
+/* Button */
+.Crate-post-Seaction button {
+  margin-top: 10px;
+  padding: 11px;
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  border: 1px solid #4a4a4a;
+  border-radius: 6px;
+  color: #f0f0f0;
+  font-size: 15px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+/* Button hover */
+.Crate-post-Seaction button:hover {
+  background: linear-gradient(145deg, #4a4a4a, #333333);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Button active */
+.Crate-post-Seaction button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Feed container: grid layout for multiple cards */
+sections {
+  display: grid;                          /* use grid to arrange cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* responsive columns */
+  gap: 20px;                              /* spacing between cards */
+  padding: 40px;                          /* space around feed */
+  background: #1b1b1b;                    /* dark tech background */
+  min-height: 100vh;                      /* full viewport height */
+  justify-items: center;                  /* center cards in grid cells */
+}
+
+/* Individual post card */
+.Post-card {
+  width: 100%;                             /* full width of grid cell */
+  max-width: 360px;                        /* max card width */
+  background: linear-gradient(145deg, #2c2c2c, #1f1f1f); /* tech gray gradient */
+  border-radius: 14px;                     /* rounded corners */
+  overflow: hidden;                         /* clip overflowing content */
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05),
+              0 12px 30px rgba(0,0,0,0.75); /* soft shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* hover animation */
+}
+
+/* Hover effect: lift card slightly */
+.Post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(120,140,255,0.3),
+              0 18px 40px rgba(0,0,0,0.9);
+}
+
+/* Post image */
+.Post-card img {
+  width: 100%;                             /* full width of card */
+  height: 220px;                           /* fixed height */
+  object-fit: cover;                        /* crop image nicely */
+  display: block;
+  border-bottom: 1px solid #333;           /* subtle divider */
+}
+
+/* Caption text */
+.Post-card p {
+  padding: 14px 16px;                      /* space inside card */
+  font-size: 15px;
+  color: #e0e0e0;                          /* light gray text */
+  letter-spacing: 0.4px;                   /* subtle spacing */
+  background: linear-gradient(180deg, #262626, #1c1c1c); /* subtle tech background */
+}
+
+/* Responsive: mobile screens */
+@media (max-width: 400px) {
+  sections {
+    grid-template-columns: 1fr;            /* single column on small screens */
+    padding: 20px;
+  }
+  .Post-card {
+    max-width: 100%;                        /* full width card */
+  }
+}
