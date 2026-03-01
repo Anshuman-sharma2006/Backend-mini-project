@@ -30,7 +30,6 @@ res.status(201).json({
         Name:user.Username,
         Emai:user.Email,
         role:user.role
-
     }
 
 
@@ -52,8 +51,8 @@ const login= async (req,res) => {
         return res.status(402).json({message:"Invalid Credentials"})
     }
     const token=  jwt.sign({id:user._id,Role:user.role},process.env.JWT_Secrt)
-    res.cookies("Tokens",token)
-    res.send(200).json({
+    res.cookie("Tokens",token)
+    res.status(200).json({
         message:"Here The User Login Succesfully",
         users:{
             id:user._id,

@@ -2,7 +2,7 @@
 const express = require('express');
 const cookiesParser = require('cookie-parser');
 const authRoutes = require('./routes/auth.route');
-const MusicRoutes=require("./routes/musisc.route")
+const MusicRoutes=require("./routes/music.route")
 const app=express();
 app.use(express.json());
 app.use(cookiesParser());
