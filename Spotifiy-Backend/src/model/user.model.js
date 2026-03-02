@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
      role:{
         type:String,
         enum:["user","artist"], //when u have two option then we use enum for options
-        default:"user",
+        default:"users",
      }
     
 

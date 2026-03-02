@@ -8,11 +8,11 @@ const album=new mongoose.Schema({
     },
     music:[{
         type:mongoose.Schema.ObjectId,
-        ref:"music"
+        ref:"Music"
     }],
     artist:[{
         type:mongoose.Schema.ObjectId,
-        ref:"user",
+        ref:"Users",
         required:true
     }]
 
